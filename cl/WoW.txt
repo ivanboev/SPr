@@ -1,0 +1,3 @@
+Name: WoW
+Size: 10GB
+Address: localhost
