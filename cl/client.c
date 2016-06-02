@@ -1,9 +1,9 @@
 #include<stdio.h>
-#include<sys/types.h>//socket
-#include<sys/socket.h>//socket
-#include<string.h>//memset
-#include<stdlib.h>//sizeof
-#include<netinet/in.h>//INADDR_ANY
+#include<sys/types.h>
+#include<sys/socket.h>/
+#include<string.h>
+#include<stdlib.h>
+#include<netinet/in.h>
 #include<arpa/inet.h>
 #include<unistd.h>
 
@@ -12,9 +12,9 @@
 #define MAXSZ 100
 int main()
 {
- int sockfd;//to create socket
+ int sockfd;
 
- struct sockaddr_in serverAddress;//client will connect on this
+ struct sockaddr_in serverAddress;
 
  int n;
  char msg1[MAXSZ];
@@ -30,7 +30,6 @@ int main()
  serverAddress.sin_addr.s_addr=inet_addr(SERVER_IP);
  serverAddress.sin_port=htons(PORT);
 
- //client  connect to server on port
  connect(sockfd,(struct sockaddr *)&serverAddress,sizeof(serverAddress));
 
  printf("\nChoose your username:\n");
@@ -74,7 +73,7 @@ int main()
 
   n=recv(sockfd,msg2,MAXSZ,0);
 
-  printf("Receive message from  server::%s\n",msg2);
+  printf("Received message from  server::%s\n",msg2);
  }
 }
  return 0;

@@ -60,12 +60,13 @@ int main()
    while(1)
    {
         
-	fprintf(fp,"%s",msg);
+	fprintf(fp,"Name %s",msg);
 	
 	n=recv(newsockfd,msg,MAXSZ,0);
 	
-	fprintf(fp,"%s",msg);
+	fprintf(fp,"Info %s",msg);
 	printf("File info saved");
+	send(newsockfd,"Info saved!",12,MAXSZ,0);
     if(n==0)
     {
      close(newsockfd);
